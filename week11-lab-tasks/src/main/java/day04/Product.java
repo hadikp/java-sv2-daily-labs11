@@ -28,4 +28,9 @@ public class Product implements Item {
         return null;
     }
 
+    @Override
+    public String toString() {
+        return name + " ára: " + price +
+                ", lejárati ideje: " + expirationDate;
+    }
 }

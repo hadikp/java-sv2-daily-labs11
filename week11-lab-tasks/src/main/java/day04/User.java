@@ -30,4 +30,9 @@ public class User {
     public List<Item> getPurchasedItems() {
         return purchasedItems;
     }
+
+    @Override
+    public String toString() {
+        return userName + " pénze: " + money;
+    }
 }

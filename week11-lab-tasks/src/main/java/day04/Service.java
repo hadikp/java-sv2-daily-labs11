@@ -27,4 +27,10 @@ public class Service implements Item {
     public LocalDate getExpirationDate() {
         return null;
     }
+
+    @Override
+    public String toString() {
+        return name + " ára: " + price +
+                ", lejárati ideje: " + expirationDate;
+    }
 }

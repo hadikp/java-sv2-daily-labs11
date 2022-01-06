@@ -8,5 +8,4 @@ public interface Item {
     int getPrice();
     LocalDate getExpirationDate();
 
-
 }
