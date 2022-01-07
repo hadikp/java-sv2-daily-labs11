@@ -10,10 +10,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class WebshopTest {
 
     Webshop webshop;
+    User kali;
 
     @BeforeEach
     void init() {
-        webshop = new Webshop(Arrays.asList(
+        kali = new User("Károly", 100_000);
+        webshop = new Webshop(Arrays.asList( kali,
                 new User("Péter", 200_000),
                 new User("Enikő", 210_000),
                 new User("Roland", 100_000)), Arrays.asList(
@@ -30,6 +32,13 @@ class WebshopTest {
         assertEquals(5, webshop.getItems().size());
         webshop.printItems();
         //System.out.println(webshop.getUsers());
+    }
+
+    @Test
+    void testSelling() {
+        webshop.selling(kali, new Product("fogkefe", 200));
+        webshop.selling(kali, new Service("masszázs", 5000));
+        System.out.println(kali.getPurchasedItems());
     }
 
 

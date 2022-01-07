@@ -1,5 +1,6 @@
 package day04;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class Webshop {
@@ -12,8 +13,24 @@ public class Webshop {
         this.items = items;
     }
 
-    public void selling() { //itt lehet vásárolni
-        System.out.println();
+    public void selling(User user, Item item) { //itt lehet vásárolni
+        for (User u: users) {
+            if (u.getUserName().equals(user.getUserName())) {
+                for (Item it: items) {
+                    if (it.getName().equals(item.getName())) {
+                        if (it instanceof Product) {
+                            LocalDate expirationDate = LocalDate.now().plusMonths(3);
+                            ((Product) it).setExpirationDate(expirationDate);
+                        }
+                        if (it instanceof Service) {
+                            LocalDate expirationDate = LocalDate.now().plusMonths(12);
+                            ((Service) it).setExpirationDate(expirationDate);
+                        }
+                        u.shopping(it);
+                    }
+                }
+            }
+        }
     }
 
     public List<User> getUsers() {

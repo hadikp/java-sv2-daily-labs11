@@ -1,12 +1,13 @@
 package day04;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
 
     private String userName;
     private int money;
-    private List<Item> purchasedItems; //vásárolt elemek
+    private List<Item> purchasedItems = new ArrayList<>(); //vásárolt elemek
 
     public void shopping(Item item) {
         if (item.getPrice() < money) {

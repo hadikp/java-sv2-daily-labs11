@@ -25,7 +25,11 @@ public class Service implements Item {
 
     @Override
     public LocalDate getExpirationDate() {
-        return null;
+        return expirationDate;
+    }
+
+    public void setExpirationDate(LocalDate expirationDate) {
+        this.expirationDate = expirationDate;
     }
 
     @Override
