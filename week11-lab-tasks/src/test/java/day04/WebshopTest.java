@@ -31,7 +31,7 @@ class WebshopTest {
     void testItemsAndUsers() {
         assertEquals(5, webshop.getItems().size());
         webshop.printItems();
-        //System.out.println(webshop.getUsers());
+        System.out.println(webshop.getUsers());
     }
 
     @Test
@@ -39,6 +39,7 @@ class WebshopTest {
         webshop.selling(kali, new Product("fogkefe", 200));
         webshop.selling(kali, new Service("masszázs", 5000));
         System.out.println(kali.getPurchasedItems());
+        //System.out.println(webshop.getUsers());
     }
 
 
